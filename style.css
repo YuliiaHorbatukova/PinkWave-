@@ -1,0 +1,549 @@
+/* ======================================================
+   Підключення шрифтів з Google Fonts
+   - Inter для основного тексту
+   - Playwrite AT для логотипу та акцентних елементів
+====================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap');
+
+/* ======================================================
+   Загальні стилі
+====================================================== */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    color: #000;
+    background: #f1f1f1;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Скидання відступів для заголовків */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Скидання відступів для абзаців */
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Скидання стилів для посилань */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Стилізація списків */
+ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Контейнер для обмеження ширини сторінки */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ======================================================
+   Кнопки
+====================================================== */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 180px;
+    padding: 12px 20px;
+
+    background-color: #9e687e;
+    border-radius: 15px;
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #111;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Друга кнопка з бордером */
+.btn_second {
+    width: 100%;
+    max-width: 100px;
+    padding: 12px 20px;
+
+    border: grey 1px solid;
+    border-radius: 15px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn_second:hover {
+    background-color: #111;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================================
+   Header (верхня панель)
+====================================================== */
+.header {
+    background-color: #57444c;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo {
+    font-family: "Playwrite AT", cursive;
+    font-size: 22px;
+    color: white;
+}
+
+.list_link:hover {
+    text-decoration: underline;
+}
+
+/* ======================================================
+   Main content (головний блок)
+====================================================== */
+.main {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-color: #423238;
+    color: #fff;
+}
+
+.main .container {
+    width: 100%;
+    text-align: center;
+}
+
+.main_title {
+    font-size: clamp(34px, 6vw, 60px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+}
+
+.main_subtitle {
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.6;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* ======================================================
+   Informed section (інформаційний блок)
+====================================================== */
+.informed {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background-color: #57444c;
+}
+
+.informed .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card (картка з фоном) */
+.informed-card {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: 520px;
+    background-image: url("/img/informed.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+/* Контент поверх фону */
+.informed-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.informed-content h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+}
+
+.informed-content p {
+    max-width: 720px;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ======================================================
+   News section (блок новин)
+====================================================== */
+.news {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 120px;
+    padding: 40px 20px;
+}
+
+.news_text {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #d36c9c;
+}
+
+.news_title {
+    font-size: clamp(40px, 5.5vw, 64px);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 18px;
+    line-height: 1.15;
+}
+
+.news_desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #6b6b6b;
+}
+
+/* ======================================================
+   News cards (картки новин)
+====================================================== */
+.news-list {
+    margin-top: 80px;
+}
+
+.news-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.news-card {
+    width: 100%;
+    max-width: 800px;
+    background-color: #57444c;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.news-card .media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.news-card img,
+.news-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.news-card .content {
+    padding: 26px;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* News meta (категорія та дата) */
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.news-category {
+    padding: 4px 10px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+}
+
+.news-date {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ======================================================
+   Publish section (блок публікації)
+====================================================== */
+.publish {
+    margin-top: 85px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.publish .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.publish_title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+}
+
+.publish_desc {
+    max-width: 600px;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+.publish .btn {
+    margin-top: 10px;
+}
+
+/* ======================================================
+   Footer (футер)
+====================================================== */
+.footer {
+    margin-top: 120px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+/* Верхня частина футера */
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 80px 15px;
+}
+
+/* Ліва частина футера */
+.footer_left {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer_logo {
+    font-family: "Playwrite AT", cursive;
+    font-size: 26px;
+}
+
+.footer_block h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.footer_block p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.footer_socials {
+    display: flex;
+    gap: 14px;
+}
+
+.footer_socials a {
+    font-size: 14px;
+    color: #000;
+    transition: opacity 0.3s ease;
+}
+
+.footer_socials a:hover {
+    opacity: 0.6;
+}
+
+/* Права частина футера */
+.footer_links {
+    display: flex;
+    gap: 120px;
+}
+
+.footer_links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer_links a {
+    font-size: 15px;
+    color: #000;
+    transition: opacity 0.3s ease;
+}
+
+.footer_links a:hover {
+    opacity: 0.6;
+}
+
+/* Нижня частина футера */
+.footer_bottom {
+    border-top: 1px solid #ddd;
+}
+
+.footer_bottom_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer_bottom_links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer_bottom_links a {
+    color: #555;
+    transition: opacity 0.3s ease;
+}
+
+.footer_bottom_links a:hover {
+    opacity: 0.6;
+}
+
+/* ======================================================
+   Burger menu (гамбургер) для мобільних
+====================================================== */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* ======================================================
+   Адаптивність для мобільних пристроїв
+====================================================== */
+@media (max-width: 768px) {
+
+    .burger {
+        display: flex;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #57444c;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .header_list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .header-btn {
+        max-width: 120px;
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
