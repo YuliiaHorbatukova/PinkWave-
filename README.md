@@ -92,7 +92,7 @@ Email: yuliia.horbatiukova.editor@pinkwave.ie
 Після успішного входу відкриється панель редактора (Editor_blank/editor.html).
 Автор
 Дипломний проєкт
-Розробник: [Ваше ім’я]
+Розробник: Юлія Горбатюкова
 Проєкт демонструє:
 Основи роботи з DOM та JS
 CRUD операції з Firebase
