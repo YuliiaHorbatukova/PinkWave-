@@ -19,7 +19,7 @@ form.addEventListener("submit", function (e) {
   if (email === VALID_EMAIL && password === VALID_PASSWORD) {
     localStorage.setItem("isEditorLoggedIn", "true");
 
-    window.location.href = "../Editor_blank/editor.html";
+    window.location.href = "editor.html";
   } else {
     errorMessage.style.display = "block";
   }
