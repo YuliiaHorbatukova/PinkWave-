@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editor Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Autorization_blank/authorization.css" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Контейнер для форми авторизації / логіну -->
+    <div class="auth-container">
+      <h1 class="auth-title">Editor Login</h1>
+      <p class="auth-subtitle">Вхід для редакторів новин</p>
+
+      <!-- Форма логіну -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Електронна пошта</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="editor@pinkwave.ie"
+            required
+          />
+        </div>
+
+        <!-- Поле для введення пароля -->
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        <!-- Кнопка для відправки форми -->
+        <button type="submit" class="login-btn">Увійти</button>
+      </form>
+
+      <!-- Повідомлення про помилку авторизації -->
+      <p id="errorMessage">Невірна електронна пошта або пароль</p>
+
+      <!-- Підвал сторінки з інформацією про панель редактора -->
+      <div class="footer-text">PinkWave News • Editor Panel</div>
+    </div>
+
+    <!-- Підключення JS скрипта для авторизації -->
+    <script src="/Autorization_blank/authorization.js"></script>
+  </body>
+</html>

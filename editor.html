@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editor Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="/Editor_blank/editor.css" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Header: заголовок сторінки та кнопка виходу -->
+    <header class="editor-header">
+      <h1>Редактор новин</h1>
+      <button id="logoutBtn" class="btn logout-btn">Вийти</button>
+    </header>
+
+    <main class="editor-main">
+      <!-- Форма для створення новини -->
+      <section class="editor-form-section">
+        <h2 id="formTitle">Додати нову новину</h2>
+        <form id="newsForm">
+          <div class="form-group">
+            <label for="newsTitle">Заголовок</label>
+            <input
+              type="text"
+              id="newsTitle"
+              placeholder="Введіть заголовок"
+              required
+            />
+          </div>
+
+          <!-- Вибір категорії новини -->
+          <div class="form-group">
+            <label for="newsCategory">Категорія</label>
+            <select id="newsCategory" required>
+              <option value="">-- Оберіть категорію --</option>
+              <option value="Політика">Політика</option>
+              <option value="Економіка">Економіка</option>
+              <option value="Соціальні проблеми">Соціальні проблеми</option>
+              <option value="Культура">Культура</option>
+              <option value="Спорт">Спорт</option>
+              <option value="Наука">Наука</option>
+              <option value="Технології">Технології</option>
+              <option value="Розваги">Розваги</option>
+            </select>
+          </div>
+
+          <!-- Текст новини -->
+          <div class="form-group">
+            <label for="newsContent">Текст новини</label>
+            <textarea
+              id="newsContent"
+              rows="5"
+              placeholder="Введіть текст новини"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Завантаження медіа (зображення, відео, GIF) -->
+          <div class="form-group">
+            <label for="newsMedia">Медіа (зображення / відео / GIF)</label>
+
+            <!-- Зона перетягування файлу -->
+            <div id="mediaDropZone" class="media-dropzone">
+              <p>
+                Перетягніть файл сюди або
+                <span id="mediaSelectBtn">оберіть файл</span>
+              </p>
+              <input
+                type="file"
+                id="newsMedia"
+                accept="image/*,video/*,image/gif"
+                hidden
+              />
+            </div>
+
+            <!-- Прев’ю медіа перед завантаженням -->
+            <div id="mediaPreview" class="media-preview"></div>
+
+            <!-- Прогрес завантаження файлу -->
+            <div
+              id="uploadProgressContainer"
+              class="upload-progress-container"
+              style="display: none"
+            >
+              <div id="uploadProgressBar" class="upload-progress-bar"></div>
+            </div>
+
+            <!-- Користувацьке повідомлення (успіх/помилка) -->
+            <div id="customMessage" class="custom-message"></div>
+          </div>
+
+          <!-- Кнопка збереження новини -->
+          <button type="submit" class="btn submit-btn">Зберегти</button>
+        </form>
+      </section>
+
+      <!-- Список опублікованих новин -->
+      <section class="editor-list-section">
+        <h2>Список новин</h2>
+        <div class="news-grid" id="newsGrid"></div>
+      </section>
+    </main>
+
+    <!-- Підключення JS скрипту для роботи редактора -->
+    <script type="module" src="editor.js"></script>
+  </body>
+</html>
