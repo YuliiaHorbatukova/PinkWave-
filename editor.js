@@ -28,7 +28,7 @@ if (localStorage.getItem("isEditorLoggedIn") !== "true") {
 
 document.getElementById("logoutBtn").addEventListener("click", () => {
   localStorage.removeItem("isEditorLoggedIn");
-  window.location.href = "../index.html";
+  window.location.href = "index.html";
 });
 
 // ===== Медіа логіка =====
